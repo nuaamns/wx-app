@@ -35,7 +35,9 @@
 							uni.setStorageSync("permission", permission);
 						});
 						console.log("success");
-						// TODO 跳转到登陆页面
+						uni.switchTab({
+							url: "../index/index"
+						});
 					},
 					fail:function(e){
 						console.log(e);

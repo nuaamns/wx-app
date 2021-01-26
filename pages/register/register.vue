@@ -36,7 +36,7 @@ export default {
 				provider: 'weixin',
 				success: function(resp) {
 					let code = resp.code;
-					console.log(code);
+					// console.log(code);
 					uni.getUserInfo({
 						provider: 'weixin',
 						success: function(resp) {
@@ -51,8 +51,9 @@ export default {
 							that.ajax(that.url.register, "POST", data, function(resp) {
 								let permission = resp.data.permission;
 								uni.setStorageSync("permission", permission);
-								console.log(permission);
-								// TODO 跳转到index页面
+								uni.switchTab({
+									url: "../index/index"
+								});
 							})
 						}
 					});
